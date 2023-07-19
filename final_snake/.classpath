@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Snake/src"/>
+	<classpathentry kind="lib" path="Snake/out/artifacts/Snake_jar/Snake.jar"/>
+	<classpathentry kind="lib" path="Snake2022-v1.jar"/>
+	<classpathentry kind="output" path="Snake/bin"/>
+</classpath>

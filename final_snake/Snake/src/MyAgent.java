@@ -339,6 +339,30 @@ public class MyAgent extends DevelopmentAgent {
          }
     	
     }
+ public static void addPoints(ArrayList<String> heads, int[][] matrix) {
+		
+		for(String head:heads) {
+			int j=Integer.parseInt(head.split(",")[1]);
+			int i=Integer.parseInt(head.split(",")[0]);
+			//System.out.println("log"+head);
+			
+			if(i>0 && matrix[i-1][j]==0) {
+				matrix[i-1][j]=10;
+			}
+			if(j>0 && matrix[i][j-1]==0) {
+				matrix[i][j-1]=10;
+			}
+			if(i<matrix.length-1 && matrix[i+1][j]==0) {
+				matrix[i+1][j]=10;
+			}
+			if(j<matrix.length-1 && matrix[i][j+1]==0) {
+				matrix[i][j+1]=10;
+			}
+			
+		}
+		// TODO Auto-generated method stub
+		
+	}
 
 
     public static void main (String args[]){
@@ -369,11 +393,20 @@ public class MyAgent extends DevelopmentAgent {
                 String tail="";
                 //do stuff with apples
 
+                ArrayList<String>heads=new ArrayList<>();
                 for (int zombie = 0; zombie < 6; zombie++) {
                     String zombieLine = br.readLine();
                     drawSnake(arr, zombieLine, zombie+10);
+                    String[]s=zombieLine.split(" ");
+                    heads.add(s[0]);
+                    
                   
                 }
+               
+                
+                
+                addPoints(heads, arr);
+                heads.clear();
                 int i_head = 0;
                 int j_head = 0;
                 int i_apple = Integer.parseInt(apple1.split(" ")[1]);
